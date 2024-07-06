@@ -1,4 +1,6 @@
-﻿@{
+﻿@model List<UserInfo>
+
+@{
     ViewBag.Title = "Toplantı Katılım Listesi";
     Layout = "_Layout2";
 }
@@ -13,20 +15,32 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Boray Gulpinar</td>
-                <td>Evet</td>
-                <td>
-                    <a class="btn btn-sm btn-primary" href="#">Detay</a>
-                </td>
-            </tr>
-            <tr>
-                <td>Kemal Çınar</td>
-                <td>Evet</td>
-                <td>
-                    <a class="btn btn-sm btn-primary" href="#">Detay</a>
-                </td>
-            </tr>
+            @{
+                int i = 0;
+            }
+            @foreach (var item in Model)
+            {
+                var durum = item.WillAttend == true ? "Evet" : "Hayır";
+                var className = item.WillAttend == true ? "table-success" : "table-danger";
+
+                if (item.WillAttend == true)
+                {
+                    i++;
+                }
+
+                <tr class="@className">
+                    <td>@item.Name</td>
+                    <td>@durum</td>
+                    <td>
+                        <a class="btn btn-sm btn-primary" href="#">Detay</a>
+                    </td>
+                </tr>
+            }
         </tbody>
     </table>
+    <div class="card">
+        <div class="card-body">
+            <span>Katılımcı sayısı: @i</span>
+        </div>
+    </div>
 </main>

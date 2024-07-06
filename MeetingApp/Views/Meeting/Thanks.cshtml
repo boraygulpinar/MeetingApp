@@ -9,13 +9,11 @@
     @if (Model.WillAttend == true)
     {
         <p>Teşekkürler @Model.Name, toplantıya sizinle birlikte @ViewBag.UserCount kişi katılıyor.</p>
-        <a class="btn btn-sm btn-outline-primary" href="#">Katılımcıları Listele</a>
+        <a class="btn btn-sm btn-outline-primary" href="/meeting/list">Katılımcıları Listele</a>
     }
     else
     {
         <p>@Model.Name, katılmadığından dolayı üzgünüz.</p>
         <a class="btn btn-sm btn-outline-primary" href="/meeting/apply">Başvuru Formu</a>
     }
-
-
 </main>

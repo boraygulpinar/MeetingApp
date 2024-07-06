@@ -7,7 +7,7 @@
         static Repository()
         {
             _users.Add(new UserInfo() { Name = "Ali", Email = "abc@gmail.com", Phone = "123", WillAttend = true });
-            _users.Add(new UserInfo() { Name = "Kemal", Email = "abcd@gmail.com", Phone = "1234", WillAttend = true });
+            _users.Add(new UserInfo() { Name = "Kemal", Email = "abcd@gmail.com", Phone = "1234", WillAttend = false });
             _users.Add(new UserInfo() { Name = "Veli", Email = "abcde@gmail.com", Phone = "12345", WillAttend = true });
         }
 
